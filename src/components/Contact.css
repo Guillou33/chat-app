@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* Component enclosing tag */
 .Contact {
   padding: 1em;
@@ -44,4 +49,7 @@
 
 .Contact .status .status-offline {
   background: #f4511e;
+}
+li {
+  list-style-type: none;
 }

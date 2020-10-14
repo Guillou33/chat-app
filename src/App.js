@@ -1,5 +1,6 @@
 import React from 'react';
 import Contact from './components/Contact';
+import { ContactList } from './components/ContactList';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         avatar='https://randomuser.me/api/portraits/women/20.jpg'
         online
       />
+      <h2>Liste des contacts :</h2>
+      <ContactList />
     </div>
   );
 }
