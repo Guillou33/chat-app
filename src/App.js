@@ -1,6 +1,6 @@
 import React from 'react';
-import Contact from './components/Contact';
-import { ContactList } from './components/ContactList';
+import Contact from './components/Contact.js';
+import { ContactList } from './components/ContactList.js';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         online
       />
       <h2>Liste des contacts :</h2>
-      <ContactList />
+      {/* <ContactList /> */}
     </div>
   );
 }

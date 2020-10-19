@@ -2,19 +2,36 @@ import React from 'react';
 import './Contact.css';
 import PropTypes from 'prop-types';
 
-function Contact(props) {
-  return (
-    <div className='Contact'>
-      <img className='avatar' src={props.avatar} alt='customer-photo ' />
-      <div className='status'>
-        <h4 className='name'>{props.name}</h4>
-        <div
-          className={props.online ? 'status-online' : 'status-offline'}
-        ></div>
-        <p className='status-text'>{props.online ? 'Online' : 'Offline'}</p>
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      online: props.online,
+    };
+  }
+
+  render() {
+    return (
+      <div className='Contact'>
+        <img className='avatar' src={this.props.avatar} alt={this.props.name} />
+        <div className='status'>
+          <h4 className='name'>{this.props.name}</h4>
+          <div
+            className={this.state.online ? 'status-online' : 'status-offline'}
+          ></div>
+          <p
+            className='status-text'
+            onClick={(event) => {
+              const newConnexion = !this.state.online;
+              this.setState({ online: newConnexion });
+            }}
+          >
+            {this.state.online ? 'Online' : 'Offline'}
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 // const onlineStatus = document.querySelector('.statusCircle');
 // onlineStatus.classList.add('.status-online')
